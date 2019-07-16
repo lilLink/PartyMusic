@@ -3,7 +3,17 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.gitingnore">
           <value>
             <set />
           </value>
@@ -118,12 +128,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/exception/NotSupportedExtensionException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/exception/ResourceNotFoundException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/model/Author.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/model/Music.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/model/Person.java">
           <value>
             <set />
           </value>
@@ -139,6 +164,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/model/VerificationToken.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/model/enumtype/Extension.java">
           <value>
             <set />
           </value>
@@ -184,6 +214,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/service/VerificationTokenService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/service/impl/PhotoServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/service/impl/RoleServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/service/impl/UserServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ua/lillink/service/impl/VerificationTokenServiceImpl.java">
           <value>
             <set />
           </value>
