@@ -13,7 +13,7 @@ public interface MusicService {
 
     Music save(Music music);
 
-    Music update(Music music);
+    Music update(Music music, Long id);
 
     void deleteById(Long id);
 }

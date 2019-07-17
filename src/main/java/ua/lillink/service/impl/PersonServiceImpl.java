@@ -1,6 +1,8 @@
 package ua.lillink.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ua.lillink.dao.PersonDao;
 import ua.lillink.dao.UserDao;
 import ua.lillink.exception.ResourceNotFoundException;
@@ -11,6 +13,8 @@ import ua.lillink.service.PersonService;
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@Transactional
 public class PersonServiceImpl implements PersonService {
 
     private final PersonDao personDao;
