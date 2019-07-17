@@ -11,8 +11,8 @@ import ua.lillink.dao.PersonDao;
 import ua.lillink.dao.PhotoDao;
 import ua.lillink.exception.NotSupportedExtensionException;
 import ua.lillink.exception.ResourceNotFoundException;
-import ua.lillink.model.Person;
 import ua.lillink.model.enumtype.Extension;
+import ua.lillink.model.profile.Person;
 import ua.lillink.model.profile.Photo;
 import ua.lillink.service.PhotoService;
 

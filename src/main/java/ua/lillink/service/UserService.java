@@ -1,5 +1,7 @@
 package ua.lillink.service;
 
+import ua.lillink.dto.UserDto;
+import ua.lillink.exception.UserAlreadyExistException;
 import ua.lillink.model.User;
 
 import java.util.List;
@@ -12,6 +14,8 @@ public interface UserService {
     List<User> findAll();
 
     Optional<User> findByEmail(String email);
+
+    User createDto(UserDto userDto) throws UserAlreadyExistException;
 
     User save(User user);
 

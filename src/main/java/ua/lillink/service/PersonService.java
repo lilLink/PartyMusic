@@ -1,19 +1,19 @@
 package ua.lillink.service;
 
-import ua.lillink.model.profile.Author;
+import ua.lillink.model.profile.Person;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface PersonService {
 
-    Optional<Author> findById(Long id);
+    Optional<Person> findById(Long id);
 
-    List<Author> findAll();
+    List<Person> findAll();
 
-    Author save(Author author);
+    Person save(Person person);
 
-    Author update(Author author);
+    Person update(Person person);
 
     void deleteById(Long id);
 }

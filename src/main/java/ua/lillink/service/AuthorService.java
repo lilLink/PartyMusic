@@ -1,6 +1,6 @@
 package ua.lillink.service;
 
-import ua.lillink.model.profile.Author;
+import ua.lillink.model.Author;
 
 import java.util.List;
 import java.util.Optional;
