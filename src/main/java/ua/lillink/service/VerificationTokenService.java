@@ -15,11 +15,11 @@ public interface VerificationTokenService {
 
     VerificationToken save(VerificationToken verificationToken);
 
-    VerificationToken update(VerificationToken verificationToken);
+    VerificationToken update(VerificationToken verificationToken, Long id);
 
     void delete(VerificationToken verificationToken);
 
-    String validateVerificationToken(String token);
+    String validateVerificationToken(String token, Long id);
 
     void createVerificationTokenForUser(User user, String token);
 }

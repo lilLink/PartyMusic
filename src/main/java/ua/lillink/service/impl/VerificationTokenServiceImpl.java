@@ -50,8 +50,8 @@ public class VerificationTokenServiceImpl implements VerificationTokenService {
     }
 
     @Override
-    public VerificationToken update(VerificationToken verificationToken) {
-        return verificationTokenDao.update(verificationToken);
+    public VerificationToken update(VerificationToken verificationToken, Long id) {
+        return verificationTokenDao.update(verificationToken, id);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class VerificationTokenServiceImpl implements VerificationTokenService {
     }
 
 
-    public String validateVerificationToken(String token) {
+    public String validateVerificationToken(String token, Long id) {
         final Calendar cal = Calendar.getInstance();
         if (verificationTokenDao.findVerificationToken(token).isPresent()) {
             VerificationToken verificationToken = verificationTokenDao.findVerificationToken(token).get();
@@ -73,7 +73,7 @@ public class VerificationTokenServiceImpl implements VerificationTokenService {
             } else {
                 User user = verificationToken.getUser();
                 user.setEnabled(true);
-                userDao.update(user);
+                userDao.update(user, id);
                 verificationTokenDao.delete(verificationToken);
                 return TOKEN_VALID;
             }

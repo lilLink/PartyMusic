@@ -14,7 +14,7 @@ public class Music {
     @Column(name = "music_id")
     private Long musicId;
 
-    @Column(name = "name")
+    @Column(name = "name_music")
     private String name;
 
 }

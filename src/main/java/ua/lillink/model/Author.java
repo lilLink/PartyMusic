@@ -1,5 +1,6 @@
 package ua.lillink.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,10 +22,18 @@ public class Author implements Serializable {
     @Column(name = "author_id")
     private Long authorId;
 
-    @Column(name = "name")
+    @Column(name = "name_author")
     private String name;
 
-    @OneToMany(mappedBy = "music", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<Music> music;
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "author_music",
+            joinColumns = {@JoinColumn(name = "author_id")},
+            inverseJoinColumns = {@JoinColumn(name = "music_id")})
+    private Set<Music> musics;
 
 }

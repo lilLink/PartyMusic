@@ -1,5 +1,6 @@
 package ua.lillink.model.profile;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import ua.lillink.model.Music;
 import ua.lillink.model.User;
@@ -30,8 +31,16 @@ public class Person implements Serializable {
     @JoinColumn(name = "photo_id", referencedColumnName = "photo_id")
     private Photo photo;
 
-    @OneToMany(mappedBy = "music", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<Music> music;
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "person_music",
+            joinColumns = {@JoinColumn(name = "person_id")},
+            inverseJoinColumns = {@JoinColumn(name = "music_id")})
+    private Set<Music> musics;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")

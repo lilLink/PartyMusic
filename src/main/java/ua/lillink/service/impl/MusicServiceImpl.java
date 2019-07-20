@@ -32,13 +32,13 @@ public class MusicServiceImpl implements MusicService {
     }
 
     @Override
-    public Music save(Music role) {
-        return musicDao.save(role);
+    public Music save(Music music) {
+        return musicDao.save(music);
     }
 
     @Override
-    public Music update(Music role) {
-        return musicDao.update(role);
+    public Music update(Music music, Long id) {
+        return musicDao.update(music, id);
     }
 
     @Override

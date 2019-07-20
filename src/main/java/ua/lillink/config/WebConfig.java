@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"ua.lillink.controller"})
+@ComponentScan(basePackages = {"ua.lillink"})
 public class WebConfig implements WebMvcConfigurer {
 
     @Bean

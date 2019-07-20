@@ -12,8 +12,6 @@ import java.util.Optional;
 import java.util.logging.Logger;
 
 @Repository
-@Primary
-@Transactional
 public class UserDaoImpl extends AbstractDao<User, Long> implements UserDao {
 
     private static final String LOGIN = "login";

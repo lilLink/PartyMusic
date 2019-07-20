@@ -5,6 +5,7 @@ import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import static org.hibernate.cfg.AvailableSettings.*;
@@ -14,8 +15,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:database.properties")
 @EnableTransactionManagement
-@ComponentScans(value = {@ComponentScan("ua.lillink.dao"),
-        @ComponentScan("ua.lillink.service")})
+@ComponentScan(value = "ua.lillink")
 public class AppConfig {
 
     @Autowired
@@ -54,6 +54,11 @@ public class AppConfig {
         transactionManager.setSessionFactory(getSessionFactory().getObject());
 
         return transactionManager;
+    }
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
 }
