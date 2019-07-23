@@ -9,6 +9,7 @@ import ua.lillink.service.AuthorService;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
 public class AuthorController {
 
     private final AuthorService authorService;

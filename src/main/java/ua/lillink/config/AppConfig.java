@@ -3,6 +3,8 @@ package ua.lillink.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -10,6 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import static org.hibernate.cfg.AvailableSettings.*;
 
+import java.util.Objects;
 import java.util.Properties;
 
 @Configuration
@@ -59,6 +62,34 @@ public class AppConfig {
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public JavaMailSender getMailSender() {
+
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+
+        mailSender.setHost(environment.getProperty("mail.host"));
+
+        mailSender.setPort(Integer.parseInt(Objects.requireNonNull(environment.getProperty("mail.port"))));
+
+        mailSender.setUsername(environment.getProperty("mail.username"));
+
+        mailSender.setPassword(environment.getProperty("mail.password"));
+
+        Properties javaMailProperties = new Properties();
+
+        javaMailProperties.put("mail.smtp.starttls.enable", Objects.requireNonNull(environment.getProperty("mail.smtp.starttls.enable")));
+
+        javaMailProperties.put("mail.smtp.auth", Objects.requireNonNull(environment.getProperty("mail.smtp.auth")));
+
+        javaMailProperties.put("mail.transport.protocol", Objects.requireNonNull(environment.getProperty("mail.transport.protocol")));
+
+        javaMailProperties.put("mail.debug", Objects.requireNonNull(environment.getProperty("mail.debug")));
+
+        mailSender.setJavaMailProperties(javaMailProperties);
+
+        return mailSender;
     }
 
 }
