@@ -17,6 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:database.properties")
+@PropertySource("classpath:mail.properties")
 @EnableTransactionManagement
 @ComponentScan(value = "ua.lillink")
 public class AppConfig {

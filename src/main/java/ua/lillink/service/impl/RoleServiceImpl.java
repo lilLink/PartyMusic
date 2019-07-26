@@ -42,8 +42,8 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public Role update(Role role, Long id) {
-        return roleDao.update(role, id);
+    public Role update(Role role) {
+        return roleDao.update(role);
     }
 
     @Override

@@ -38,8 +38,8 @@ public class PersonController {
     @PutMapping()
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation(value = "Update person")
-    public Person update(@Valid @RequestBody Person person, @RequestParam Long id) {
-        return personService.update(person, id);
+    public Person update(@Valid @RequestBody Person person) {
+        return personService.update(person);
     }
 
     @DeleteMapping(path = "/{id}")

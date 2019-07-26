@@ -10,7 +10,7 @@ public interface BaseDao<T,PK extends Serializable> {
 
     T save(T object);
 
-    T update(T object, Long id);
+    T update(T object);
 
     void delete(T object);
 

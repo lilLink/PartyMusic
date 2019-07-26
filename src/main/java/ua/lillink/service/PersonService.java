@@ -13,7 +13,7 @@ public interface PersonService {
 
     Person save(Person person);
 
-    Person update(Person person, Long id);
+    Person update(Person person);
 
     void deleteById(Long id);
 }

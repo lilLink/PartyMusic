@@ -91,7 +91,7 @@ public class PhotoServiceImpl implements PhotoService {
                 Photo deletedPhoto = person.getPhoto();
 
                 person.setPhoto(savedPhoto);
-                personDao.update(person, userId);
+                personDao.update(person);
 
                 deletePhoto(deletedPhoto, Paths.get(UPLOAD_DIRECTORY_FOR_AVATARS));
 
@@ -107,8 +107,8 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public Photo update(Photo photo, Long userId) {
-        return photoDao.update(photo, userId);
+    public Photo update(Photo photo) {
+        return photoDao.update(photo);
     }
 
     @Override

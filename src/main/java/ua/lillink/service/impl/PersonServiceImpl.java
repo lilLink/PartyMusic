@@ -50,7 +50,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person update(Person person, Long id) {
+    public Person update(Person person) {
         /*if (getLoggedUser().isPresent()) {
             Long loggedUserId = getLoggedUser().get().getUserId();
             if (person.getUserId().equals(loggedUserId)) {
@@ -60,7 +60,7 @@ public class PersonServiceImpl implements PersonService {
             }
         }*/
 
-        return personDao.update(person, id);
+        return personDao.update(person);
     }
 
     @Override

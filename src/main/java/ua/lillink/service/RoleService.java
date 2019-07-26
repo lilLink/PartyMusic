@@ -15,7 +15,7 @@ public interface RoleService {
 
     Role findByType(String type);
 
-    Role update(Role role, Long id);
+    Role update(Role role);
 
     void deleteById(Long id);
 }

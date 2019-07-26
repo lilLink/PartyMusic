@@ -38,7 +38,7 @@ public abstract class AbstractDao<T,PK extends Serializable> implements BaseDao<
 
     @Override
     @SuppressWarnings("unchecked")
-    public T update(T object, Long id) {
+    public T update(T object) {
         sessionFactory.getCurrentSession().merge(object);
         return object;
     }

@@ -37,8 +37,8 @@ public class MusicServiceImpl implements MusicService {
     }
 
     @Override
-    public Music update(Music music, Long id) {
-        return musicDao.update(music, id);
+    public Music update(Music music) {
+        return musicDao.update(music);
     }
 
     @Override

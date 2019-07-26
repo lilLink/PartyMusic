@@ -18,7 +18,7 @@ public interface PhotoService {
 
     Photo uploadAvatar(MultipartFile file, Long userId);
 
-    Photo update(Photo photo, Long userId);
+    Photo update(Photo photo);
 
     void deleteById(Long id);
 }

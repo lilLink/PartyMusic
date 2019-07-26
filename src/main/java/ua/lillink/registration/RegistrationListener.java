@@ -2,12 +2,14 @@ package ua.lillink.registration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
+import org.springframework.stereotype.Component;
 import ua.lillink.model.User;
 import ua.lillink.service.VerificationTokenService;
 import ua.lillink.service.letter.GenerateLetter;
 
 import java.util.UUID;
 
+@Component
 public class RegistrationListener implements ApplicationListener<OnRegistrationCompleteEvent> {
 
     private static final String FRONT_URL = "http://localhost:4200";
