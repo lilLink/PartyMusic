@@ -48,6 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             "/configuration/security",
             "/csrf"
     };
+    private static final String[] CSRF_IGNORE = {"/login/**", "/users/**", "/password/**"};
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -88,6 +89,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
 
                 .csrf()
+                .ignoringAntMatchers(CSRF_IGNORE)
                 .csrfTokenRepository(csrfTokenRepository())
                 .and()
                 .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);
